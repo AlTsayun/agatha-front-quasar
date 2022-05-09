@@ -1,29 +1,6 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <div class="q-pa-md">
-        <q-toolbar class="bg-primary text-white">
-          <q-btn flat rounded to="/">
-            <q-avatar square>
-              <img
-                alt="Agatha logo"
-                src="~assets/agatha_logo_transparent.png"
-              />
-            </q-avatar>
-          </q-btn>
-          <q-toolbar-title>Agatha Web Data</q-toolbar-title>
-
-          <!-- <q-btn flat round dense>
-            <q-avatar>
-              <img
-                src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg"
-              />
-            </q-avatar>
-          </q-btn> -->
-          <HeaderAuthDivision />
-        </q-toolbar>
-      </div>
-    </q-header>
+  <q-layout view="hHh LpR fFf">
+    <MainHeader />
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -32,13 +9,13 @@
 
 <script>
 import { defineComponent, ref } from "vue";
-import HeaderAuthDivision from "components/HeaderAuthDivision.vue";
+import MainHeader from "components/MainHeader.vue";
 
 export default defineComponent({
   name: "MainLayout",
 
   components: {
-    HeaderAuthDivision,
+    MainHeader,
   },
 
   setup() {

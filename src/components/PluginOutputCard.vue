@@ -3,29 +3,22 @@
     <q-card-section horizontal>
       <div class="text-h6">{{ plugin.name }}</div>
       <q-space />
-      <q-btn icon="question_mark" round dense />
+      <div v-if="plugin.tooltip">
+        <q-chip dense>
+          ?
+          <q-tooltip> {{ plugin.tooltip }} </q-tooltip>
+        </q-chip>
+      </div>
     </q-card-section>
-    <div v-if="!plugin.chart.isDataLoaded">
-      <ChartCanvas :plugin-chart="plugin.chart" />
-    </div>
-    <div v-else class="flex flex-center q-pa-xl">
-      <q-circular-progress
-        class="q-ma-xl"
-        indeterminate
-        color="secondary"
-        track-color="grey-3"
-        size="xl"
-      />
-    </div>
+    <q-card-section>
+      <slot />
+    </q-card-section>
   </q-card>
 </template>
 
 <script>
-import ChartCanvas from "components/ChartCanvas.vue";
-
 export default {
   name: "PluginOutputCard",
-  components: { ChartCanvas },
   props: { plugin: { type: Object, required: true } },
   setup() {
     return {};

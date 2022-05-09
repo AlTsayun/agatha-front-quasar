@@ -19,6 +19,20 @@ const routes = [
         path: "dashboard",
         component: () => import("pages/DashboardPage.vue"),
       },
+      {
+        path: "mediums/",
+        component: () => import("layouts/MediumsLayout.vue"),
+        children: [
+          {
+            path: "",
+            component: () => import("pages/MediumsPage.vue"),
+          },
+          {
+            path: ":mediumId",
+            component: () => import("pages/MediumsPage.vue"),
+          },
+        ],
+      },
     ],
   },
 

@@ -6,18 +6,18 @@
         <q-list>
           <q-item v-ripple clickable to="/dashboard">
             <q-item-section avatar>
-              <q-icon name="apps" />
+              <q-icon name="dashboard" />
             </q-item-section>
             <q-item-section>
               <q-item-label> Open dashboard </q-item-label>
             </q-item-section>
           </q-item>
-          <q-item v-ripple clickable>
+          <q-item v-ripple clickable to="/mediums">
             <q-item-section avatar>
-              <q-icon name="apps" />
+              <q-icon name="web" />
             </q-item-section>
             <q-item-section>
-              <q-item-label> Open dashboard </q-item-label>
+              <q-item-label> Manage mediums </q-item-label>
             </q-item-section>
           </q-item>
         </q-list>
@@ -26,7 +26,7 @@
       <q-separator vertical inset class="q-mx-lg" />
 
       <div class="column items-center">
-        <q-avatar size="72px" icon="account_circle">
+        <q-avatar size="xl" icon="account_circle">
           <!-- <img src="https://cdn.quasar.dev/img/boy-avatar.png" /> -->
         </q-avatar>
 

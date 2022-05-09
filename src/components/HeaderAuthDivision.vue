@@ -21,16 +21,16 @@
 import { defineComponent, ref } from "vue";
 import AccountDropdown from "components/AccountDropdown.vue";
 
-export default {
+export default defineComponent({
   name: "HeaderAuthDivision",
   components: {
     AccountDropdown,
   },
   setup() {
-    const isLoggedIn = ref(true);
+    const isLoggedIn = ref(false);
     return {
       isLoggedIn,
     };
   },
-};
+});
 </script>
