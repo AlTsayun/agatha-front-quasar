@@ -2,26 +2,27 @@
   <q-card>
     <q-card-section>
       <div class="row">
-        <div class="col-8">
-          <h4 class="text-h4 text-center">Where your data flows?</h4>
-          <h2 class="text-h5">
+        <q-list class="col-8 column items-stretch justify-between">
+          <q-item class="flex flex-center">
+            <q-item-label class="text-h4">
+              Where your data flows?
+            </q-item-label>
+          </q-item>
+          <q-item class="text-h5">
             Explore your web site from the use side. See where clients come
             from, what pages they do visit most and much more.
-          </h2>
-          <div class="row">
-            <div class="justify-center">
-              <q-btn
-                label="Learn more"
-                no-caps
-                color="primary"
-                rounded
-                size="xl"
-                center
-              >
-              </q-btn>
-            </div>
-          </div>
-        </div>
+          </q-item>
+          <q-item class="flex flex-center">
+            <q-btn
+              label="Learn more"
+              no-caps
+              color="primary"
+              rounded
+              size="xl"
+              center
+            />
+          </q-item>
+        </q-list>
         <div class="col-4">
           <q-img
             alt="Agatha logo"

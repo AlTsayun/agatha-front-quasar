@@ -27,7 +27,7 @@ export default defineComponent({
     AccountDropdown,
   },
   setup() {
-    const isLoggedIn = ref(false);
+    const isLoggedIn = ref(true);
     return {
       isLoggedIn,
     };

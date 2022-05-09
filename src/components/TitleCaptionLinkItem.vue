@@ -1,5 +1,5 @@
 <template>
-  <q-item clickable tag="a" :href="link">
+  <q-item clickable @click="$router.push(link)">
     <q-item-section>
       <q-item-label>{{ title }}</q-item-label>
       <q-item-label caption>{{ caption }}</q-item-label>
@@ -11,7 +11,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "MediumItem",
+  name: "TitleCaptionLinkItem",
   props: {
     title: {
       type: String,
@@ -25,7 +25,7 @@ export default defineComponent({
 
     link: {
       type: String,
-      default: "#",
+      required: true,
     },
   },
 });

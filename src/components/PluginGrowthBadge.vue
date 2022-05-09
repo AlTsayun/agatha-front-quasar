@@ -15,8 +15,6 @@ export default defineComponent({
   },
   methods: {
     getBadgeColor(dynamics) {
-      console.log("--------------------------");
-      console.log(dynamics);
       return dynamics.delta > 0 && dynamics.isGrowthPositive ? "green" : "red";
     },
   },

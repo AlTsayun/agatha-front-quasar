@@ -20,12 +20,42 @@ const routes = [
         component: () => import("pages/DashboardPage.vue"),
       },
       {
+        path: "catalog/",
+        component: () => import("layouts/CatalogLayout.vue"),
+        children: [
+          {
+            path: "",
+            redirect: (to) => {
+              return { path: "/catalog/plugins" };
+            },
+          },
+          {
+            path: "sensors/",
+            component: () => import("pages/PluginsCatalogPage.vue"),
+          },
+          {
+            path: "plugins/",
+            component: () => import("pages/PluginsCatalogPage.vue"),
+          },
+        ],
+      },
+      {
+        path: "/catalog/plugins/:pluginId",
+        component: () => import("pages/PluginsCatalogPage.vue"),
+      },
+      {
+        path: "/catalog/sensors/:sensorId",
+        component: () => import("pages/PluginsCatalogPage.vue"),
+      },
+      {
         path: "mediums/",
         component: () => import("layouts/MediumsLayout.vue"),
         children: [
           {
             path: "",
-            component: () => import("pages/MediumsPage.vue"),
+            redirect: (to) => {
+              return { path: "/mediums/1" };
+            },
           },
           {
             path: ":mediumId",

@@ -3,9 +3,14 @@
     <template #drawerScrollArea>
       <q-list padding>
         <TitleCaptionLinkItem
-          title="medium1"
-          caption="medium1 caption"
-          link="/mediums/1"
+          title="Plugins"
+          caption="Discover available plugins"
+          link="/catalog/plugins"
+        />
+        <TitleCaptionLinkItem
+          title="Sensors"
+          caption="Learn more about provided sensors"
+          link="/catalog/sensors"
         />
       </q-list>
     </template>

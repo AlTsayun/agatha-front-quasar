@@ -19,15 +19,7 @@ export default defineComponent({
   },
 
   setup() {
-    // const isLoggedIn = ref(false);
-
-    return {
-      // essentialLinks: linksList,
-      // leftDrawerOpen,
-      // toggleLeftDrawer() {
-      // leftDrawerOpen.value = !leftDrawerOpen.value;
-      // },
-    };
+    return {};
   },
 });
 </script>

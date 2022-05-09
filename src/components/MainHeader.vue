@@ -16,6 +16,8 @@
               />
             </q-avatar>
           </q-btn> -->
+
+        <q-btn flat label="Catalog" rounded to="/catalog" />
         <HeaderAuthDivision />
       </q-toolbar>
     </div>
