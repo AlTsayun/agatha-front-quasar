@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page class="flex flex-center q-pa-lg">
     <div class="full-width" style="max-width: 1400px">
       <MainAboutCard />
     </div>

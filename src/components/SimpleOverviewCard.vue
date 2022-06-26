@@ -1,9 +1,16 @@
 <template>
   <q-card style="width: 300px">
     <template v-if="image">
-      <q-img :src="image">
-        <div class="absolute-bottom text-h6">{{ title }}</div>
-      </q-img>
+      <q-dialog v-model="card">
+        <div style="width: 500px; max-width: 80vw">
+          <q-img :src="image" />
+        </div>
+      </q-dialog>
+      <q-item clickable class="no-padding" @click="card = true">
+        <q-img :src="image">
+          <div class="absolute-bottom text-h6">{{ title }}</div>
+        </q-img>
+      </q-item>
     </template>
     <template v-else>
       <q-card-section>
@@ -26,6 +33,8 @@
 </template>
 
 <script>
+import { ref } from "vue";
+
 export default {
   name: "SimpleOverviewCard",
   props: {
@@ -35,7 +44,9 @@ export default {
     description: { type: String, required: true },
   },
   setup() {
-    return {};
+    return {
+      card: ref(false),
+    };
   },
   data() {
     return {};

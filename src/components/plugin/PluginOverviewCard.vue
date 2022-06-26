@@ -3,7 +3,7 @@
     :title="plugin.name"
     :description="plugin.description"
     :image="plugin.image"
-    subtitle="by John Doe"
+    :subtitle="plugin.subtitle"
   >
     <q-card-section horizontal class="column items-stretch">
       <SensorsExpansionItem :sensors="plugin.sensors" />

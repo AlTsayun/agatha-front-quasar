@@ -11,7 +11,7 @@
       <PluginGrowthBadge :dynamics="plugin.data.dynamics" />
     </div>
     <div v-else-if="plugin.type == 'percent'" class="text-h4">
-      {{ formatPercent(plugin.data.percent) }}
+      {{ formatPercent(plugin.data.fraction) }}
 
       <PluginGrowthBadge :dynamics="plugin.data.dynamics" />
     </div>
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import PluginOutputCard from "components/PluginOutputCard.vue";
+import PluginOutputCard from "components/plugin_output/PluginOutputCard.vue";
 import PluginGrowthBadge from "components/PluginGrowthBadge.vue";
 
 export default {
@@ -48,8 +48,8 @@ export default {
       seconds = seconds < 10 ? "0" + seconds : seconds;
       return `${hours != 0 ? hours + ":" : ""}${minutes}:${seconds}`;
     },
-    formatPercent(percent) {
-      return `${+(percent * 100).toFixed(2)} %`;
+    formatPercent(fraction) {
+      return `${+(fraction * 100).toFixed(2)} %`;
     },
   },
 };

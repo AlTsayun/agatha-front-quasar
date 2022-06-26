@@ -1,14 +1,17 @@
 <template>
   <q-input
-    v-model="password"
     label="Password"
-    :type="isPwd ? 'password' : 'text'"
+    :type="shown ? 'text' : 'password'"
+    :rules="[
+      (val) => (val && val.length > 7) || 'Please type at least 8 symbols',
+      ...rules,
+    ]"
   >
     <template #append>
       <q-icon
-        :name="isPwd ? 'visibility_off' : 'visibility'"
+        :name="shown ? 'visibility_off' : 'visibility'"
         class="cursor-pointer"
-        @click="isPwd = !isPwd"
+        @click="shown = !shown"
       />
     </template>
   </q-input>
@@ -16,13 +19,18 @@
 
 <script>
 import { ref } from "vue";
-
 export default {
   name: "PasswordInput",
-  setup() {
+  props: {
+    visible: { type: Boolean, default: false },
+    rules: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  data(props) {
     return {
-      password: ref(""),
-      isPwd: ref(true),
+      shown: ref(props.visible),
     };
   },
 };

@@ -3,8 +3,8 @@
     <template #drawerScrollArea>
       <q-list padding>
         <TitleCaptionLinkItem
-          title="medium1"
-          caption="medium1 caption"
+          title="example.com"
+          caption="Medium example"
           link="/mediums/1"
         />
       </q-list>

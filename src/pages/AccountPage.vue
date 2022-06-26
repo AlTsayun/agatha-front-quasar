@@ -1,16 +1,23 @@
 <template>
   <q-page class="flex flex-center" padding>
     <div class="full-width" style="max-width: 300px">
-      <h5 class="q-my-md text-center">Login</h5>
+      <h5 class="q-my-md text-center">Account</h5>
       <q-card>
         <q-form>
           <q-card-section>
-            <EmailInput v-model="email" />
+            <EmailInput v-model="email" disable />
+            <q-input v-model="firstName" label="First name" />
+            <q-input v-model="lastName" label="Last name" />
             <PasswordInput v-model="password" />
-            <q-checkbox label="Remember me" :model-value="true" />
+            <PasswordInput
+              v-model="passwordConfirmation"
+              label="Repeat Password"
+              :lazy-rules="false"
+              :rules="[(val) => val == password || 'Must be same as password']"
+            />
           </q-card-section>
           <q-btn
-            label="Login"
+            label="Save"
             class="full-width"
             color="primary"
             type="submit"
@@ -27,18 +34,16 @@ import EmailInput from "components/EmailInput.vue";
 import PasswordInput from "components/PasswordInput.vue";
 
 export default defineComponent({
-  name: "LoginPage",
+  name: "AccountPage",
   components: { EmailInput, PasswordInput },
   data() {
     return {
-      email: ref("address@gmail.com"),
+      email: ref("admin@gmail.com"),
+      firstName: ref("John"),
+      lastName: ref("Doe"),
       password: ref("password"),
+      passwordConfirmation: ref("password"),
     };
-  },
-  methods: {
-    onclick() {
-      console.log(this.email);
-    },
   },
 });
 </script>

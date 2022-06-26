@@ -20,6 +20,14 @@
               <q-item-label> Manage mediums </q-item-label>
             </q-item-section>
           </q-item>
+          <q-item v-ripple clickable to="/account">
+            <q-item-section avatar>
+              <q-icon name="manage_accounts" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label> Manage account </q-item-label>
+            </q-item-section>
+          </q-item>
         </q-list>
       </div>
 
@@ -39,6 +47,7 @@
           push
           size="sm"
           icon="logout"
+          @click="onLogoutClicked"
         />
       </div>
     </div>
@@ -46,14 +55,26 @@
 </template>
 
 <script>
+import { useQuasar } from "quasar";
 import { ref } from "vue";
 
 export default {
   name: "AccountDropdown",
-  setup() {
+  props: {
+    onLogout: { type: Function, required: true },
+  },
+  setup(props) {
+    const $q = useQuasar();
+
+    function onLogoutClicked() {
+      $q.dialog({
+        title: "Confirm",
+        message: "Would you like to log out?",
+        cancel: true,
+      }).onOk(props.onLogout);
+    }
     return {
-      mobileData: ref(false),
-      bluetooth: ref(false),
+      onLogoutClicked,
     };
   },
 };

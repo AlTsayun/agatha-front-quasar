@@ -16,6 +16,10 @@ const routes = [
         component: () => import("pages/SignupPage.vue"),
       },
       {
+        path: "account",
+        component: () => import("pages/AccountPage.vue"),
+      },
+      {
         path: "dashboard",
         component: () => import("pages/DashboardPage.vue"),
       },
@@ -30,22 +34,22 @@ const routes = [
             },
           },
           {
-            path: "sensors/",
+            path: "plugins",
             component: () => import("pages/PluginsCatalogPage.vue"),
           },
           {
-            path: "plugins/",
+            path: "sensors",
+            component: () => import("pages/SensorsCatalogPage.vue"),
+          },
+          {
+            path: "plugins/:id",
             component: () => import("pages/PluginsCatalogPage.vue"),
           },
+          {
+            path: "sensors/:id",
+            component: () => import("pages/SensorsCatalogPage.vue"),
+          },
         ],
-      },
-      {
-        path: "/catalog/plugins/:pluginId",
-        component: () => import("pages/PluginsCatalogPage.vue"),
-      },
-      {
-        path: "/catalog/sensors/:sensorId",
-        component: () => import("pages/PluginsCatalogPage.vue"),
       },
       {
         path: "mediums/",
